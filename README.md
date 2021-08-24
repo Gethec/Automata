@@ -1,4 +1,4 @@
-# ![Automata Icon](https://bitbucket.org/Gethec/automata/raw/master/resources/automata.png) Automata #
+# ![Automata Icon](hhttps://bitbucket.org/Gethec/automata/raw/master/resources/automata-small.png) Automata #
 
 ## Disclaimer ##
 As with anything else, exposing your system to the Internet incurs risks!  This container does its best to be as secure as possible, but makes no guarantees to being completely impenetrable.  Use at your own risk, and feel free to suggest changes that can further increase security.
