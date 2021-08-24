@@ -1,0 +1,13 @@
+# do daily/weekly/monthly maintenance
+# min   hour    day     month   weekday command
+*/15    *       *       *       *       run-parts /config/15min
+0       *       *       *       *       run-parts /config/hourly
+0       0       *       *       *       run-parts /config/daily
+0       1       *       *       0       run-parts /config/sunday
+0       1       *       *       1       run-parts /config/monday
+0       1       *       *       2       run-parts /config/tuesday
+0       1       *       *       3       run-parts /config/wednesday
+0       1       *       *       4       run-parts /config/thursday
+0       1       *       *       5       run-parts /config/friday
+0       1       *       *       6       run-parts /config/saturday
+0       2       1       *       *       run-parts /config/monthly
