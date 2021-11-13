@@ -1,6 +1,7 @@
 FROM alpine
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
 ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-amd64-installer /tmp/s6-overlay
+ADD https://bitbucket.org/Gethec/projecttools/raw/master/DockerUtilities/ContainerTools /usr/bin/ContainerTools
 COPY root/ /
 RUN apk --no-cache --update upgrade && \
     apk add \
