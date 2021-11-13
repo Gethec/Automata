@@ -1,4 +1,4 @@
-# do daily/weekly/monthly maintenance
+# do quarter-hour/hourly/daily/weekly/monthly maintenance
 # min   hour    day     month   weekday command
 */15    *       *       *       *       run-parts /config/15min
 0       *       *       *       *       run-parts /config/hourly
