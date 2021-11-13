@@ -2,7 +2,8 @@ FROM alpine
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
 ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-amd64-installer /tmp/s6-overlay
 COPY root/ /
-RUN apk --no-cache --update add \
+RUN apk --no-cache --update upgrade && \
+    apk add \
         bash \
         curl \
         nano \
