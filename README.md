@@ -42,4 +42,5 @@ Example run command:
         gethec/automata
 
 ## Changelog ##
+* 0.0.2 - Reworked initialization script
 * 0.0.1 - Initial release
