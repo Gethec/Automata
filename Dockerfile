@@ -6,13 +6,12 @@ RUN apk --no-cache --update upgrade && \
     apk add \
         bash \
         curl \
-        nano \
         shadow \
         tzdata && \
     chmod u+x /tmp/s6-overlay && \
     /tmp/s6-overlay / && \
     rm -rf /tmp/* && \
-    addgroup --gid 1000 abc && \
+    addgroup --gid 911 abc && \
     adduser \
         --home /config \
         --gecos "" \
