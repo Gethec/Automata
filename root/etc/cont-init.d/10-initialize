@@ -5,19 +5,19 @@ PUID=${PUID:-911}
 PGID=${PGID:-911}
 
 # Change UID and GID of 'abc' if the environment variables are defined
-log "setting user ID to: $PUID"
+log "Setting user ID to: $PUID"
 log "$(usermod -o -u "$PUID" abc 2>&1)"
-log "setting group ID to: $PGID"
+log "Setting group ID to: $PGID"
 log "$(groupmod -o -g "$PGID" abc 2>&1)"
 
 # Create the work directories if they do not exist
-log "creating crontab directories"
+log "Creating crontab directories"
 log "$(mkdir -pv /config/{15min,hourly,daily,sunday,monday,tuesday,wednesday,thursday,friday,saturday,monthly})"
 
 # Change ownership to 'abc'
-log "setting directory permissions"
+log "Setting directory permissions"
 log "$(chown -Rv abc:abc /config)"
 
 # Add the execute flag to all of the files.  Not actually sure this works...
-log "ensuring scripts are executable"
+log "Ensuring scripts are executable"
 log "$(chmod -Rc +x /config)"
