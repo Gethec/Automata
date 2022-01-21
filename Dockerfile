@@ -2,7 +2,8 @@ FROM alpine
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
 
 # Download latest S6-Overlay build from project repository: https://github.com/just-containers/s6-overlay
-ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-amd64-installer /tmp/s6-overlay
+#ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-amd64-installer /tmp/s6-overlay
+ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.3/s6-overlay-amd64-installer /tmp/s6-overlay
 
 # Download common tools
 ADD https://bitbucket.org/Gethec/projecttools/raw/master/DockerUtilities/ContainerTools /usr/bin/ContainerTools
