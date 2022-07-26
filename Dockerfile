@@ -1,8 +1,9 @@
 FROM alpine
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
 
-# Download latest S6-Overlay build from project repository: https://github.com/just-containers/s6-overlay
-ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.3/s6-overlay-amd64-installer /tmp/s6-overlay
+# Download latest S6-Overlay components from project repository: https://github.com/just-containers/s6-overlay
+ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-noarch.tar.xz /tmp
+ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-x86_64.tar.xz /tmp
 
 # Download common tools
 ADD https://raw.githubusercontent.com/Gethec/ProjectTools/main/DockerUtilities/ContainerTools /usr/local/sbin/ContainerTools
@@ -16,8 +17,8 @@ RUN apk --no-cache add \
         shadow \
         tzdata && \
     # Install S6-Overlay
-    chmod u+x /tmp/s6-overlay && \
-    /tmp/s6-overlay / && \
+    tar -C / -Jxpf /tmp/s6-overlay-x86_64.tar.xz && \
+    tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz && \
     rm -rf /tmp/* && \
     # Create user 'abc'
     addgroup --gid 911 abc && \
