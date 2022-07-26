@@ -1,5 +1,6 @@
 FROM alpine
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
+COPY root/ /
 
 # Download latest S6-Overlay components from project repository: https://github.com/just-containers/s6-overlay
 ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-overlay-noarch.tar.xz /tmp
@@ -8,12 +9,11 @@ ADD https://github.com/just-containers/s6-overlay/releases/latest/download/s6-ov
 # Download common tools
 ADD https://raw.githubusercontent.com/Gethec/ProjectTools/main/DockerUtilities/ContainerTools /usr/local/sbin/ContainerTools
 
-COPY root/ /
-
 # Update and install required programs
 RUN apk --no-cache add \
         bash \
         curl \
+        nano \
         shadow \
         tzdata && \
     # Install S6-Overlay

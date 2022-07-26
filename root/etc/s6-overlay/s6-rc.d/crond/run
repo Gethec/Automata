@@ -1,3 +1,2 @@
 #!/command/with-contenv bash
-
-crond -f
+crond -fL /dev/null

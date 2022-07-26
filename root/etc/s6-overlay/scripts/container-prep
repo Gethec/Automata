@@ -21,3 +21,4 @@ log "$(chown -Rv abc:abc /config)"
 # Add the execute flag to all of the files.  Not actually sure this works...
 log "Ensuring scripts are executable"
 log "$(chmod -Rc +x /config)"
+ 
