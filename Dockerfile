@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.18.3
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS="2"
 COPY root/ /
 
